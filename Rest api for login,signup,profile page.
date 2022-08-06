@@ -1,0 +1,7 @@
+LLD : Login + SignUp + Profile page(REST API)
+The design should support Authentication and authorization of users (I chose spring security). I had to define classes, methods, DB tables, and choice of DB (I chose MongoDB because it’s cheap).
+Later I was asked questions about how will I handle multi-threading and scaling.
+
+
+
+https://www.javaguides.net/2021/10/login-and-registration-rest-api-using-spring-boot-spring-security-hibernate-mysql-database.html
