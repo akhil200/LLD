@@ -1,0 +1,128 @@
+Parking Lot LLd
+
+1. 3 types of vehichle- should be able to find a parking spot.
+2. ticket at entrance and payment at exit.
+3. multiple floors
+4. multiple entry/exit points.
+5. 
+
+
+
+Class Main{
+Public static void main(String args[]){
+    Admin a= new Admin();
+    pl=a.getParkingLot();
+Customer c=new Customer(“Akhil”);
+c.vehichle=new Vehichle(“Car”);
+//ParkingArea parea =new ParkingArea();
+ParkingLot pl=getParkingLot();
+admin.addAttendants();---;
+p.getEntryPoint()--->enter c;
+//s1=a1.getService();
+spot=parea.findParkingSpot("Car");
+parea.generateReceipt(c,spot);
+parea.assignParkingSpot(c,spot,receiptid);
+// shoppping,,, 
+parea.makePayment(); or parea.calculatecharge();
+parea.deassignSpot(spot);
+
+}
+}
+
+
+public enum VehichleType(){CAR,BIKE,BUS;}
+
+
+class Vehichle{
+long RCNo;
+String owner;
+VehichleType type;
+
+}
+
+class ParkingSpot{
+int floorNum;
+int x,y;
+SpotType spotType;
+bool empty;
+int Reciptid;
+
+}
+
+
+class ParkingLot{
+int numFloors;
+List<EntryPannel> entryPoints;
+List<ExitPannel> exitPoints;
+Map<floor,List<ParkingSpot>> parkingSpots;
+List<Attendants> attendants;
+//getter and setter.
+
+//constructor;
+//Singleton pattern- so that there can not be more than one copy of parking lot. in case of more than one admin,each one should do modification to same lot.
+private ParkingLot parkingLot;
+private Parkinglot(){
+    
+}
+public static ParkingLot getParkinglot(){
+    if(parkingLot==null){
+        parkingLot=new ParkingLot();
+    }
+    return parkingLot;
+}
+
+// to avoid assignment of same spot to more than one vehichle.Only one can access this method at a time.
+Spot synchronized findParkingSpot(car){
+    for(spot:parkingSpots){
+        if(empty and suitable for type)
+        return spot;
+    }
+    return null;
+}
+
+assignParkingSpot(spot,receiptid){
+    spot.setempty(false);
+    spot.setreceiptid(receiptid);
+}
+generateReceipt(car,customer,spot){
+    Recipt recipt=new Recipt();
+    recipt.customer=c;
+    recipt.time=getTime();
+    recipt.spot=spot;
+    return receipt;
+}
+calculatecharge(receipt){
+    Time now=getTime();
+    return mp[vehichletype]*hours;
+}
+deassignParkingSpot(spot){
+    spot.setempty(true);
+}
+}
+
+
+class Person{
+String name;
+int id;
+}
+
+class Customer extends Person{
+Vehichle vehichle;
+makePayment();
+}
+
+class ParkingAttendant extends Person{
+int id;
+Role role;
+
+}
+
+class Admin{
+    ParkingLot pl=getParkingLot();
+    
+addFloors();
+addparkingSpots();
+removeparkingspots();
+
+}
+
