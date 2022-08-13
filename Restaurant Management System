@@ -1,0 +1,125 @@
+Entity- class Restaurant{
+String name;
+List<Branch> branchList;
+addBranch();
+}
+
+class Branch{
+String location;
+Menu menu;
+System system;
+Admin admin;
+Receptionist receptionist;
+List<Waiter> waiterList;
+List<Table> tableList;
+
+}
+
+class Menu{
+Map<Item,int> ItemMap;
+//item can be string as well;
+}
+
+public enum TableStatus{BOOKED,AVAILABLE};
+public enum TableType{LARGE,SMALL};
+class Table{
+int id;
+int capacity;
+TableStatus tableStatus;
+Pair<int,int> location;
+Menu menu;
+TableType tableType;
+}
+# For simplicity, we are not defining getter and setter functions. The reader can
+# assume that all class attributes are private and accessed through their respective
+# public getter methods and modified only through their public methods function.
+
+class Person{
+String name;
+}
+
+class Employee{
+String id;
+String salary;
+}
+
+class Admin extends Employee{
+//addStaff(),addTable(),updateMenu();
+}
+
+class Waiter extends Employee{
+//receive order,completeOrder,TrackOrderPrice,calculateOrderPrice;
+OrderService orderService;
+
+}
+
+class Receptionist extends Employee{
+Search searchService;
+Booking bookingService;
+
+}
+
+class Customer extends Person{
+Search searchService;
+synchronised chooseTable(Table);
+browseMenu();
+Booking bookingService;
+Orderservice orderService;
+makePayment();
+}
+
+
+
+Services- 
+class Search{
+Branch branch;
+returnAvailableTables(Time);
+}
+
+class Booking{
+String id;
+Time startTime;
+System system;
+Time estimatedEndTime;
+Table table;
+int peopleCount;
+String customerName;
+doBooking(Table,Time);
+cancelBooking();
+}
+
+class OrderService{
+Table Table;
+Waiter waiter;//debatable;
+status{IN_PROGRESS,COMPLETED};
+List<Items> ordered;
+addItemtoOrder();
+RemoveItemFromOrder();
+completeOrder();
+Bill calculateCharge();
+}
+
+class System{
+//singleton pattern;
+List<Booking> bookingList;
+changeTableStatus(Table t, Customer c); called by dobooking();
+assign a waiter();called by Dobooking();
+//TRACK STATUS OF booking /orders.
+//on completion of order- system notifies waiter to providebill;
+//acceptPayment;
+//changeTableStatus();
+}
+
+how to manage instance of orderservice between customer and waiter - system?;
+browseMenu() - impl?
+extra items like Kitchen , chef ,payments are optional depending on time.
+Basic Design Open for recommendations.
+MISSED FUNCTIONALITIES?
+
+Reference -
+https://akshay-iyangar.github.io/system-design/grokking-ood/examples/java/restaurant-management-system.html
+
+
+
+DB SCHEMA
+WIP.
